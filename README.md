@@ -59,42 +59,58 @@ json
 ### get_auth_token
 
 경로: '/api/v1/token'
+
 메소드: GET
+
 파라메터: 
+
 반환값: 토큰 값
+
 설명: 현재 사용자의 auth 토큰으 생성하고 토큰에 사용자 아이디를 저장함
+
 
 ### login
 
 경로: '/api/v1/<provider>/login'
+
 메소드: POST
+
 파라메터: 1회용 Auth code
+
 반환값: 성공적으로 로그인 했을 시에는 토큰을, 그렇지 않을 때는 에러 메시지를 반환.
+
 설명: OAuth 제공자(현재는 구글만 제공)를 통해 로그인하는 엔드포인트. 클라이언트 측에서 받은 auth code를 \
 	 구글 API를 통해 인증을 하고, 이를 통해 얻은 사용자 정보를 플라스크 로그인 세션에 저장. 또한 사용자 이메일을\
 	 통해 데이터베이스에 사용자를 추가하고 클라이언트와 웹 서버 간 로그인 기능을 위한 토큰을 발행
 
 
-
 ### logout
 
 경로: '/api/v1/<provider>/logout'
+
 메소드: POST
+
 파라메터: 토큰
+
 반환값: 로그아웃 성공 여부에 대한 메시지
+
 설명: 웹 서버 로그인 세션에 저장된 사용자 정보를 구글 API를 통해 로그아웃하고, 로그인 세션에 저장된 사용자 정보와 토큰을 제거
 
 
 ### users
 
 경로: '/api/v1/users'
+
 메소드: GET, POST
+
 파라메터: 
 	GET:
 	POST: 사용자 이메일과 비밀번호, 사진(선택)
+
 반환값:
 	GET: 모든 사용자에 대한 정보
 	POST: 저장한 사용자의 이메일
+
 설명: 
 	GET: 데이터베이스에 저장된 모든 사용자 정보를 쿼리
 	POST: OAuth를 사용하지 않고 새로운 사용자 계정을 생성
@@ -103,15 +119,19 @@ json
 ### specificUser
 
 경로: '/api/v1/users/<int:user_id>'
+
 메소드: GET, PUT, DELETE
+
 파라메터: 토큰
 	GET: 
 	PUT: 새로운 사용자 프로필 정보
 	DELETE:
+
 반환값:
 	GET: 해당 사용자 아이디를 가진 사용자 정보
 	PUT: 수정된 해당 사용자 정보
 	DELETE: 사용자가 제거됬다는 메시지
+
 설명: 
 	GET: 특정 사용자 정보를 반환
 	PUT: 특정 사용자 정보를 업데이트
@@ -121,13 +141,17 @@ json
 ### requestsMeal
 
 경로: '/api/v1/requests'
+
 메소드: GET, POST
+
 파라메터: 토큰
 	GET: 
 	POST: 모임 요청 정보
+
 반환값:
 	GET: 모든 모임 요청 정보
 	POST: 저장한 새 모음 요청 정보
+
 설명: 
 	GET: 모든 모임 요청 정보를 쿼리
 	POST: 새로운 모임 요청
@@ -136,15 +160,19 @@ json
 ### specificRequestMeal
 
 경로: '/api/v1/requests/<int:request_id>'
+
 메소드: GET, PUT, DELETE
+
 파라메터: 토큰
 	GET: 
 	PUT: 수정할 모임 정보
 	DELETE:
+
 반환값:
 	GET: 특정 모임 요청 정보
 	PUT: 새로 업데이트한 모임 요청 정보
 	DELETE: 해당 요청이 삭제되었다는 메시지
+
 설명: 
 	GET: 특정 모임 요청 정보를 반환
 	PUT: 특정 모임 요청 정보를 업데이트
@@ -154,13 +182,17 @@ json
 ### proposals
 
 경로: '/api/v1/proposals'
+
 메소드: GET, POST
+
 파라메터: 토큰
 	GET:
 	POST: 
+
 반환값:
 	GET: 현재 사용자의 모든 모임 신청 정보
 	POST: 새로 신청한 모임 정보
+
 설명: 
 	GET: 현재 사용자의 모든 모임 신청을 불러옴
 	POST: 모임에 새로 신청
@@ -169,15 +201,19 @@ json
 ### specificProposal
 
 경로: '/api/v1/proposals/<int:proposal_id>'
+
 메소드: GET, PUT, DELETE
+
 파라메터: 토큰
 	GET: 
 	PUT: 수정할 신청 정보.
 	DELETE:
+
 반환값:
 	GET: 특정 신청 정보
 	PUT: 새로 수정한 특정 신청 정보
 	DELETE: 특정 신청 정보를 제거했다는 메시지
+
 설명: 
 	GET: 특정 신청 정보를 쿼리
 	PUT: 특정 신청 정보를 업데이트
@@ -187,13 +223,17 @@ json
 ### dates
 
 경로: '/api/v1/dates'
+
 메소드: GET, POST
+
 파라메터: 토큰
 	GET:
 	POST: 
+
 반환값:
 	GET: 현재 사용자의 모든 약속
 	POST: 현재 사용자가 추가한 새 약속 정보
+
 설명: 
 	GET: 현재 사용자의 모든 약속을 쿼리
 	POST: 현재 사용자의 새 약속을 생성
@@ -202,21 +242,20 @@ json
 ### specificDate
 
 경로: '/api/v1/dates/<int:date_id>'
+
 메소드: GET, PUT, DELETE
+
 파라메터: 토큰
 	GET: 
 	PUT: 수정할 약속 정보
 	DELETE:
+
 반환값:
 	GET: 특정 약속 정보
 	PUT: 새로 수정할 특정 약속 정보
 	DELETE: 특정 약속 정보를 삭제했다는 메시지
+
 설명: 
 	GET: 특정 약속 정보를 쿼리.
 	PUT: 특정 약속 정보를 업데이트.
 	DELETE: 특정 약속 정보를 삭제.
-
-
-
-
-
