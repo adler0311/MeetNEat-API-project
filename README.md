@@ -23,7 +23,7 @@
 
 해당 파일을 실행하기 위해서는 다음과 같은 모듈이 필요합니다.
 
-```
+`
 flask
 httplib2
 sqlalchemy
@@ -31,6 +31,7 @@ httpauth
 oauth2client
 requests
 json
+`
 
 ## 사용한 스택, 언어 :
 
