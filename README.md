@@ -33,19 +33,14 @@ requests
 json
 `
 
+
 ## 사용한 스택, 언어 :
 
-* [구글 맵 API]
-* [포스퀘어 API]
-* [파이썬]
-* [파이썬 플라스크]
-* [SQLAlchemy]
-
-	[구글 맵 API] : <https://developers.google.com/maps/documentation/static-maps/?hl=ko>
-	[포스퀘어 API] : <https://developer.foursquare.com/>
-	[파이썬] : <https://www.python.org/>
-	[파이썬 플라스크] : <http://flask-docs-kr.readthedocs.io/ko/latest/>
-	[SQLAlchemy] : <https://www.sqlalchemy.org/>
+* [구글 맵 API] : <https://developers.google.com/maps/documentation/static-maps/?hl=ko>
+* [포스퀘어 API] : <https://developer.foursquare.com/>
+* [파이썬] : <https://www.python.org/>
+* [파이썬 플라스크] : <http://flask-docs-kr.readthedocs.io/ko/latest/>
+* [SQLAlchemy] : <https://www.sqlalchemy.org/>
 
 
 ## 파일 설명 :
