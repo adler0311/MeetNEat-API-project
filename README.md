@@ -31,7 +31,6 @@ httpauth
 oauth2client
 requests
 json
-'''
 
 ## 사용한 스택, 언어 :
 
